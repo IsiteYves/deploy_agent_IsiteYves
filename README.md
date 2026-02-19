@@ -1,22 +1,22 @@
-utomated Project Bootstrapping - Student Attendance Tracker
+Automated Project Bootstrapping - Student Attendance Tracker
 
-## Overview
-This project automates the setup of a Student Attendance Tracker application using a shell script. It demonstrates Infrastructure as Code (IaC) principles by creating a reproducible, efficient, and reliable development environment.
+## Introduction
+This project uses a shell script to automatically set up a Student Attendance Tracker application. It showcases the concept of Infrastructure as Code (IaC) by providing a reproducible, optimized, and trustworthy development environment.
 
-## Features
-- Automated directory structure creation
-- Dynamic configuration management using `sed`
-- Signal handling with graceful cleanup (SIGINT/Ctrl+C)
-- Environment validation (Python3 check)
-- Archive creation on interrupt
+## Functionality
+- Automatic directory creation
+- Dynamic configuration management with `sed`
+- Signal handling with clean shutdown (SIGINT/Ctrl+C)
+- Environment check (Python3 availability)
+- Archive creation on signal reception
 - Interactive threshold configuration
 
-## Prerequisites
-- Bash shell (Linux/macOS) or Git Bash (Windows)
-- Python 3.x (recommended for running the application)
-- Git
+## Requirements
+-  shell environment (Linux/macOS) or Git  (Windows)
+- Python 3.x (for running the application)
+- Git version control system
 
-## Installation & Usage
+## Setup & Usage
 
 ### 1. Clone the Repository
 ```
@@ -24,26 +24,28 @@ git clone https://github.com/IsiteYves/deploy_agent_IsiteYves.git
 cd deploy_agent_IsiteYves
 ```
 
-### 2. Make the Script Executable
+### 2. Give Execution Permissions
 ```
 chmod +x setup_project.sh
 ```
-### 3. Run the Script
+
+### 3. Execute the Script
 ```
 ./setup_project.sh
 ```
-### 4. Follow the Prompts
-- Enter a project name (alphanumeric, underscores, hyphens only)
-- Choose whether to update attendance thresholds
-- If updating, enter new warning and failure percentages (0-100)
 
-## How to Trigger the Archive Feature
-The script includes a signal trap that handles user interrupts (SIGINT/Ctrl+C):
-1. During execution, press Ctrl+C at any time
+### 4. Follow the Instructions
+- Enter the project name (alphanumeric, underscores, and hyphens only)
+- Select whether to update attendance thresholds
+- If updating, enter the new warning and failure percentages (0-100)
+
+## How to Use the Archive Functionality
+The script contains a signal handling mechanism to catch user interrupts (SIGINT/Ctrl+C):
+1. While running, press Ctrl+C at any time
 2. The script will:
-* Create an archive: attendance_tracker_[project_name]_archive.tar.gz
-* Delete the incomplete project directory
-* Exit gracefully
+* Generate an archive: attendance_tracker_[project_name]_archive.tar.gz
+* Remove the partially created project directory
+* Cleanly shut down
 
 Example:
 ```
@@ -75,10 +77,10 @@ attendance_tracker_[project_name]/
 ```
 
 ## Configuration Management
-The script uses sed for in-place editing of config.json:
+The script employs sed for in-place editing of config.json:
 - Default warning threshold: 75%
 - Default failure threshold: 50%
-- Updates are performed using regex pattern matching
+- Updates are done via regex pattern matching
 
 ## Running the Application
 After setup:
@@ -89,13 +91,13 @@ python3 attendance_checker.py
 ```
 
 ## Error Handling
-- Validates Python installation
-- Ensures project name is not empty
-- Validates threshold inputs (numbers 0-100)
-- Gracefully handles interrupts
+- Checks Python installation
+- Checks if project name is empty
+- Checks if threshold values are numbers between 0-100
+- Handles interrupts gracefully
 
 ## Notes
-- The script is compatible with both Linux and macOS (handles sed differences)
+- The script is compatible with both Linux and macOS (sed compatibility handled)
 - Archive is created as a .tar.gz file in the current directory
 - The incomplete directory is automatically removed after archiving
 
@@ -106,11 +108,11 @@ Date
 March 2024
 
 ## Learning Objectives Achieved
-- Shell scripting proficiency
-- Directory and file manipulation
-- Signal handling and traps
+- Shell scripting mastery
+- Directory and file operations
+- Signal handling and trapping
 - Stream editing with sed
-- Environment validation
+- Environment checks
 - Error handling
 - Documentation
 - Version control with Git
