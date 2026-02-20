@@ -1,20 +1,20 @@
-Automated Project Bootstrapping - Student Attendance Tracker
+Automated Student Attendance Tracker
 
 ## Introduction
-This project uses a shell script to automatically set up a Student Attendance Tracker application. It showcases the concept of Infrastructure as Code (IaC) by providing a reproducible, optimized, and trustworthy development environment.
+In this project, I use a shell script to automatically set up a Student Attendance Tracker application.
 
-## Functionality
+## Functionalities
 - Automatic directory creation
 - Dynamic configuration management with `sed`
-- Signal handling with clean shutdown (SIGINT/Ctrl+C)
-- Environment check (Python3 availability)
+- Signal handling with clean shutdown (SIGINT/Ctrl + C)
+- I do environment check (Python3 installation)
 - Archive creation on signal reception
-- Interactive threshold configuration
+- We have interactive threshold configuration
 
-## Requirements
--  shell environment (Linux/macOS) or Git  (Windows)
+## Requirements to run the script
+- shell environment (Linux/macOS) or simply Git (Windows)
 - Python 3.x (for running the application)
-- Git version control system
+- Git must be installed
 
 ## Setup & Usage
 
@@ -24,7 +24,7 @@ git clone https://github.com/IsiteYves/deploy_agent_IsiteYves.git
 cd deploy_agent_IsiteYves
 ```
 
-### 2. Give Execution Permissions
+### 2. Give it execution permissions
 ```
 chmod +x setup_project.sh
 ```
@@ -34,20 +34,20 @@ chmod +x setup_project.sh
 ./setup_project.sh
 ```
 
-### 4. Follow the Instructions
-- Enter the project name (alphanumeric, underscores, and hyphens only)
-- Select whether to update attendance thresholds
-- If updating, enter the new warning and failure percentages (0-100)
+### 4. Follow these instructions
+- Enter the project name (only alphanumeric characters, underscores, and hyphens are allowed in that name)
+- Select whether to update attendance thresholds or not
+- If you choose to update, enter the new warning and failure percentages (0 to 100)
 
-## How to Use the Archive Functionality
-The script contains a signal handling mechanism to catch user interrupts (SIGINT/Ctrl+C):
-1. While running, press Ctrl+C at any time
+## How to use the archive functionality
+The script contains a signal handling mechanism to catch user interrupts (SIGINT/Ctrl + C):
+1. While running this script, press Ctrl+C at any time
 2. The script will:
-* Generate an archive: attendance_tracker_[project_name]_archive.tar.gz
-* Remove the partially created project directory
-* Cleanly shut down
+* First generate an archive: attendance_tracker_[project_name]_archive.tar.gz
+* Then remove the partially created project directory
+* Finally cleanly shut down
 
-Example:
+Example from what I ran:
 ```
 $ ./setup_project.sh
 ==========================================
@@ -65,7 +65,7 @@ Enter project name (used for directory): test_project
 [!] Exiting gracefully...
 ```
 
-## Generated Project Structure
+## Generated project structure
 ```
 attendance_tracker_[project_name]/
 ├── attendance_checker.py
@@ -76,28 +76,27 @@ attendance_tracker_[project_name]/
     └── reports.log
 ```
 
-## Configuration Management
-The script employs sed for in-place editing of config.json:
+## Configuration management
+The script uses sed for in-place editing of config.json:
 - Default warning threshold: 75%
 - Default failure threshold: 50%
-- Updates are done via regex pattern matching
+- Updates are done via a regex pattern matching
 
-## Running the Application
-After setup:
-
+## Running the application
+After setup, do this:
 ```
 cd attendance_tracker_[project_name]
 python3 attendance_checker.py
 ```
 
 ## Error Handling
-- Checks Python installation
-- Checks if project name is empty
-- Checks if threshold values are numbers between 0-100
-- Handles interrupts gracefully
+- This app checks python installation
+- It checks if project name is empty
+- It checks if threshold values are numbers between 0-100
+- It even handles interrupts properly so the app doesn't crash
 
 ## Notes
-- The script is compatible with both Linux and macOS (sed compatibility handled)
+- The script will work with both Linux and macOS (because I handled sed compatibility)
 - Archive is created as a .tar.gz file in the current directory
 - The incomplete directory is automatically removed after archiving
 
@@ -106,13 +105,3 @@ Yves Isite
 
 Date
 March 2024
-
-## Learning Objectives Achieved
-- Shell scripting mastery
-- Directory and file operations
-- Signal handling and trapping
-- Stream editing with sed
-- Environment checks
-- Error handling
-- Documentation
-- Version control with Git
