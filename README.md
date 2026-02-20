@@ -3,6 +3,8 @@ Automated Student Attendance Tracker
 ## Introduction
 In this project, I use a shell script to automatically set up a Student Attendance Tracker application.
 
+**Explanatory video:** https://www.loom.com/share/eec0a91a39a846d78eee582e196fd239
+
 ## Functionalities
 - Automatic directory creation
 - Dynamic configuration management with `sed`
