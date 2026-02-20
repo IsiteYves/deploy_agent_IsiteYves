@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# setup_project.sh - Automated Project Bootstrapping for Student Attendance Tracker
 # Author: Yves Isite
-# Date: $(19 +%2026-%02-%19)
+# Date: $(date +%Y-%m-%d)
 
 # Color codes for better output readability
 RED='\033[0;31m'
